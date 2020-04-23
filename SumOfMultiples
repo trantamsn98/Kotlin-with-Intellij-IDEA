@@ -1,0 +1,27 @@
+object SumOfMultiples {
+
+    fun sum(factors: Set<Int>, limit: Int): Int {
+        var Sum:Int = 0
+        for(i in 0 until limit)
+        {
+            Sum = Sum + factors.elementAt(i)
+        }
+        return Sum
+    }
+    fun multiples(number: Int): Set<Int> {
+        var mul: MutableSet<Int> = mutableSetOf()
+        for (i in 3 until number) {
+            if ((i % 3 == 0) or (i % 5 == 0)) {
+                mul.add(i)
+            }
+        }
+        return mul
+    }
+
+    fun main() {
+        var temp : Set<Int> = multiples(20)
+        var KQ: Int = sum(temp, temp.size)
+        println("Day la KQ: ${KQ}")
+
+    }
+}
